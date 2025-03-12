@@ -233,6 +233,7 @@ export default {
 .language-buttons {
   display: flex;
   gap: 10px;
+  margin-left: 10VH;
 }
 
 .btn-language {
@@ -254,6 +255,7 @@ export default {
 @media (max-width: 992px) {
   .mobile-menu .language-buttons {
     flex-direction: row;
+    margin-left: 0VH !important;
   }
 }
 </style>
