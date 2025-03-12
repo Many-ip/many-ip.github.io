@@ -117,16 +117,21 @@ export default {
 
 <style scoped>
 .full-screen {
-  height: 100vh;
+  min-height: 100vh;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #282c34;
+  overflow: hidden;
 }
 
 .terminal {
-  width: 80%;
+  width: 95%;
   max-width: 800px;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
   background-color: #1e1e1e;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -202,5 +207,21 @@ export default {
 
 @keyframes blink {
   50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .full-screen {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .terminal {
+    width: 100%;
+    max-height: 80vh;
+  }
+
+  .terminal-body {
+    font-size: 14px;
+  }
 }
 </style>
