@@ -1,6 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
     <div class="container">
+      <!-- Nombre del portfolio -->
       <a class="navbar-brand" href="#">Manel Ferrer</a>
 
       <!-- Botón menú hamburguesa -->
@@ -12,6 +13,26 @@
         </div>
       </button>
 
+      <!-- Menú de escritorio -->
+      <div class="collapse navbar-collapse d-lg-flex justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item" v-for="(section, key) in sections" :key="key">
+            <a class="nav-link" :class="{ active: activeSection === key }" href="#" @click.prevent="scrollTo(key)">
+              {{ section }}
+            </a>
+          </li>
+        </ul>
+
+        <!-- Idiomas en la derecha -->
+        <div class="language-buttons d-none d-lg-flex">
+          <button v-for="(label, code) in languages" :key="code" class="btn btn-language"
+            :class="{ 'active-lang': currentLanguage === code }" @click.prevent="changeLanguage(code)">
+            {{ label }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Menú móvil con animación -->
       <transition name="slide-fade">
         <div v-if="isMenuOpen" class="mobile-menu">
           <ul class="navbar-nav">
@@ -22,8 +43,8 @@
             </li>
           </ul>
 
-          <!-- Botones de idioma centrados -->
-          <div class="language-buttons">
+          <!-- Botones de idioma en móvil -->
+          <div class="language-buttons d-flex justify-content-center">
             <button v-for="(label, code) in languages" :key="code" class="btn btn-language"
               :class="{ 'active-lang': currentLanguage === code }" @click.prevent="changeLanguage(code)">
               {{ label }}
@@ -178,7 +199,7 @@ export default {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* MENÚ DESPLEGABLE */
+/* MENÚ MÓVIL */
 .mobile-menu {
   position: absolute;
   top: 100%;
@@ -200,12 +221,12 @@ export default {
 
 .slide-fade-enter-from {
   opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(-15px);
 }
 
 .slide-fade-leave-to {
   opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(-15px);
 }
 
 /* BOTONES DE IDIOMA */
@@ -231,16 +252,8 @@ export default {
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
-  .navbar-collapse {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .language-buttons {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
+  .mobile-menu .language-buttons {
+    flex-direction: row;
   }
 }
 </style>
