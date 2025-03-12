@@ -1,7 +1,7 @@
 export const translations = {
   es: {
     tab: {
-      portfolio: "Portafolio",
+      portfolio: "Manel | IT",
       hidden: "Manel | ⚡ Candidato Ideal Disponible ⚡"
     },
     menu: {
@@ -49,7 +49,7 @@ export const translations = {
   },
   cat: {
     tab: {
-      portfolio: "Portafoli",
+      portfolio: "Manel | IT",
       hidden: "Manel | ⚡ Candidat Ideal Disponible ⚡"
     },
     menu: {
@@ -97,7 +97,7 @@ export const translations = {
   },
   en: {
     tab: {
-      portfolio: "Portfolio",
+      portfolio: "Manel | IT",
       hidden: "Manel | ⚡ Ideal Candidate Available ⚡"
     },
     menu: {
