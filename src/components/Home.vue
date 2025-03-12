@@ -13,7 +13,7 @@
         <p class="prompt">
           <span class="user">manel@barcelona:~$</span>
           <span class="command" v-html="currentCommand"></span>
-          <span class="cursor" v-if="!installing">|</span>
+          <span class="cursor" v-if="!installing"></span>
         </p>
         <div v-if="installing" class="installation">
           <p v-for="(line, index) in installationSteps" :key="index" v-html="line"></p>
@@ -22,7 +22,7 @@
             <a href="#about" class="terminal-link">[{{ translations[currentLanguage].about.title }}]</a>
           </p>
           <p v-if="installationComplete" class="prompt">
-            <span class="user">manel@barcelona:~$</span> <span class="cursor">|</span>
+            <span class="user">manel@barcelona:~$</span> <span class="cursor"></span>
           </p>
         </div>
       </div>
