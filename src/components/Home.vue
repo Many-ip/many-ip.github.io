@@ -117,7 +117,7 @@ export default {
 
 <style scoped>
 .full-screen {
-  min-height: 100vh;
+  min-height: 110vh;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -129,8 +129,7 @@ export default {
 .terminal {
   width: 95%;
   max-width: 800px;
-  height: auto;
-  max-height: 90vh;
+  height: 90vh;
   overflow-y: auto;
   background-color: #1e1e1e;
   border-radius: 10px;
